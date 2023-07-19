@@ -1,0 +1,29 @@
+<div>
+   <div>
+        <label for="from">From:</label>
+        <input type="text" [(ngModel)]="message.from">
+   </div>
+    <div>
+        <label for="to">To:</label>
+        <input type="text" [(ngModel)]="message.to">
+    </div>
+    <div>
+        <label for="message">Message:</label>
+        <input type="text" [(ngModel)]="message.message">
+    </div>
+    <div>
+        <button (click)="send()">Send</button>
+    </div>
+
+    <div>Recieved:</div>
+    <div *ngFor="let m of messages">
+        <div>{{m}}</div>
+    </div>
+    <br>
+    <div>Sent:</div>
+    <div *ngFor="let m of sent">
+        <div>From: {{m.from}}</div>
+        <div>To: {{m.to}}</div>
+        <div>Message: {{m.message}}</div>
+    </div>
+</div>
